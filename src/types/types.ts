@@ -28,3 +28,9 @@ export interface SearchPanelProps {
   searchInput: string;
   setSearchInput: React.Dispatch<React.SetStateAction<string>>;
 }
+
+export interface UserListProps {
+  users: SearchUser[];
+  selectedUser: string | null;
+  setSelectedUser: React.Dispatch<React.SetStateAction<string | null>>;
+}

@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 import { SearchResult, SearchUser, UserDetails } from "./types/types";
 import SearchPanel from "./components/search-panel/search-panel";
+import UserList from "./components/user-list/user-list";
 
 function App() {
   const [selectedUserData, setSelectedUserData] = useState<UserDetails | null>(
@@ -46,20 +47,11 @@ function App() {
             setSearchInput={setSearchInput}
           />
         </div>
-
-        <ul>
-          {users.map((user) => (
-            <li
-              key={user.id}
-              className={selectedUser === user.login ? "selected" : ""}
-              onClick={() => {
-                setSelectedUser(user.login);
-              }}
-            >
-              {user.login}
-            </li>
-          ))}
-        </ul>
+        <UserList
+          users={users}
+          selectedUser={selectedUser}
+          setSelectedUser={setSelectedUser}
+        />
       </div>
       <div>
         <h2>{selectedUserData?.login}</h2>
