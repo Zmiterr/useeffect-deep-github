@@ -20,7 +20,7 @@ const UserDetailsBox: FC<UserDetailsBoxProps> = ({ selectedUserData }) => {
   }, [timer]);
 
   return (
-    <div>
+    <div className="user_details">
       <h2>{selectedUserData?.login}</h2>
       <Timer
         timerOut={timer}
@@ -28,12 +28,19 @@ const UserDetailsBox: FC<UserDetailsBoxProps> = ({ selectedUserData }) => {
         selectedUserData={selectedUserData?.id}
       />
       {selectedUserData && (
-        <div>
-          <img src={selectedUserData.avatar_url} alt="" />
-          <br />
-          Followers: {selectedUserData.followers}{" "}
-          {selectedUserData.location && "From: "}
-          {selectedUserData.location}
+        <div className="user_description">
+          <img
+            className="user_avatar"
+            src={selectedUserData.avatar_url}
+            alt=""
+          />
+          <div>
+            <p>Followers: {selectedUserData.followers} </p>
+            <p>
+              {selectedUserData.location && "From: "}
+              {selectedUserData.location}
+            </p>
+          </div>
         </div>
       )}
     </div>

@@ -23,7 +23,7 @@ const Timer: FC<TimerProps> = ({ timerOut, setTimerOut, selectedUserData }) => {
       clearInterval(interval);
     };
   }, [selectedUserData]);
-  return <div>{timerOut}</div>;
+  return <div>Will be hide after: {timerOut} seconds</div>;
 };
 
 export default Timer;

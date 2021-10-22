@@ -7,7 +7,7 @@ const UserList: FC<UserListProps> = ({
   setSelectedUser,
 }) => {
   return (
-    <ul>
+    <ul className="user_list">
       {users.map((user) => (
         <li
           key={user.id}

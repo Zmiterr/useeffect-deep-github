@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <div>
+        <div className="search_panel">
           <SearchPanel
             searchInput={searchInput}
             setSearchInput={setSearchInput}
