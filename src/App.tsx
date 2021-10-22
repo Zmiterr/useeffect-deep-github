@@ -4,6 +4,7 @@ import axios from "axios";
 import { SearchResult, SearchUser, UserDetails } from "./types/types";
 import SearchPanel from "./components/search-panel/search-panel";
 import UserList from "./components/user-list/user-list";
+import UserDetailsBox from "./components/user-detalis/user-detalis";
 
 function App() {
   const [selectedUserData, setSelectedUserData] = useState<UserDetails | null>(
@@ -53,17 +54,7 @@ function App() {
           setSelectedUser={setSelectedUser}
         />
       </div>
-      <div>
-        <h2>{selectedUserData?.login}</h2>
-        {selectedUserData && (
-          <div>
-            <img src={selectedUserData.avatar_url} alt="" />
-            <br />
-            Followers: {selectedUserData.followers} From:{" "}
-            {selectedUserData.location}
-          </div>
-        )}
-      </div>
+      <UserDetailsBox selectedUserData={selectedUserData!} />
     </div>
   );
 }
