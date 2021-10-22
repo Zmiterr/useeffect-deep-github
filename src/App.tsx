@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import { SearchResult, SearchUser, UserDetails } from "./types/types";
+import SearchPanel from "./components/search-panel/search-panel";
 
 function App() {
   const [selectedUserData, setSelectedUserData] = useState<UserDetails | null>(
@@ -40,13 +41,10 @@ function App() {
     <div className="App">
       <div>
         <div>
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchInput}
-            onChange={(event) => setSearchInput(event.target.value)}
+          <SearchPanel
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
           />
-          <button>Find</button>
         </div>
 
         <ul>

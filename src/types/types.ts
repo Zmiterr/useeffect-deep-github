@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface SearchResult {
   items: SearchUser[];
 }
@@ -20,4 +22,9 @@ export interface UserDetails {
   html_url: string;
   followers: number;
   location: string;
+}
+
+export interface SearchPanelProps {
+  searchInput: string;
+  setSearchInput: React.Dispatch<React.SetStateAction<string>>;
 }
