@@ -1,7 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import { UserListProps } from "../../types/types";
 
-const UserList = ({ users, selectedUser, setSelectedUser }: UserListProps) => {
+const UserList: FC<UserListProps> = ({
+  users,
+  selectedUser,
+  setSelectedUser,
+}) => {
   return (
     <ul>
       {users.map((user) => (
