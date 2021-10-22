@@ -11,6 +11,13 @@ const SearchPanel = ({ searchInput, setSearchInput }: SearchPanelProps) => {
         onChange={(event) => setSearchInput(event.target.value)}
       />
       <button>Find</button>
+      <button
+        onClick={() => {
+          setSearchInput("");
+        }}
+      >
+        Reset
+      </button>
     </div>
   );
 };
