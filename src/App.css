@@ -1,3 +1,17 @@
 .App {
   text-align: center;
+  display: flex;
+  /*flex-basis: fit-content;*/
+  /*justify-content: space-around;*/
+}
+
+.App div {
+  padding: 10px;
+}
+li {
+  list-style-type: none;
+}
+
+.selected {
+  background-color: #777777;
 }
