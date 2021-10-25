@@ -33,4 +33,5 @@ export interface UserListProps {
   users: SearchUser[];
   selectedUser: string | null;
   setSelectedUser: React.Dispatch<React.SetStateAction<string | null>>;
+  setIsShowDetails: React.Dispatch<React.SetStateAction<boolean>>;
 }

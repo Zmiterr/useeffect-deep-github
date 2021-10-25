@@ -11,7 +11,7 @@ const Timer: FC<TimerProps> = ({ timerOut, setTimerOut, selectedUserData }) => {
 
   useEffect(() => {
     setTimerOut(timerOut);
-  }, [timerOut]);
+  }, [timerOut, setTimerOut]);
 
   useEffect(() => {
     setTimer(timer);

@@ -1,13 +1,17 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { Dispatch, FC, useEffect, useState } from "react";
 import { UserDetails } from "../../types/types";
 import Timer from "./timer/timer";
 
 interface UserDetailsBoxProps {
   selectedUserData: UserDetails;
+  setIsShowDetails: Dispatch<boolean>;
 }
 
 const initialTimerSeconds = 10;
-const UserDetailsBox: FC<UserDetailsBoxProps> = ({ selectedUserData }) => {
+const UserDetailsBox: FC<UserDetailsBoxProps> = ({
+  selectedUserData,
+  setIsShowDetails,
+}) => {
   const [timer, setTimer] = useState(initialTimerSeconds);
   useEffect(() => {
     setTimer(initialTimerSeconds);
@@ -15,7 +19,7 @@ const UserDetailsBox: FC<UserDetailsBoxProps> = ({ selectedUserData }) => {
 
   useEffect(() => {
     if (timer < 1) {
-      //TODO hide element
+      setIsShowDetails(false);
     }
   }, [timer]);
 

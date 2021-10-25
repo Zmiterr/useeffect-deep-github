@@ -39,6 +39,8 @@ function App() {
     //   .then((res) => setUsers(res.data.items));
   }, [searchInput]);
 
+  const [isShowDetails, setIsShowDetails] = useState(true);
+
   return (
     <div className="App">
       <aside>
@@ -52,9 +54,15 @@ function App() {
           users={users}
           selectedUser={selectedUser}
           setSelectedUser={setSelectedUser}
+          setIsShowDetails={setIsShowDetails}
         />
       </aside>
-      <UserDetailsBox selectedUserData={selectedUserData!} />
+      {isShowDetails && (
+        <UserDetailsBox
+          selectedUserData={selectedUserData!}
+          setIsShowDetails={setIsShowDetails}
+        />
+      )}
     </div>
   );
 }

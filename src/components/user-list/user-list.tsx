@@ -5,6 +5,7 @@ const UserList: FC<UserListProps> = ({
   users,
   selectedUser,
   setSelectedUser,
+  setIsShowDetails,
 }) => {
   return (
     <ul className="user_list">
@@ -14,6 +15,7 @@ const UserList: FC<UserListProps> = ({
           className={selectedUser === user.login ? "selected" : ""}
           onClick={() => {
             setSelectedUser(user.login);
+            setIsShowDetails(true);
           }}
         >
           {user.login}
