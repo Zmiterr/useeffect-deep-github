@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <aside>
         <div className="search_panel">
           <SearchPanel
             searchInput={searchInput}
@@ -53,7 +53,7 @@ function App() {
           selectedUser={selectedUser}
           setSelectedUser={setSelectedUser}
         />
-      </div>
+      </aside>
       <UserDetailsBox selectedUserData={selectedUserData!} />
     </div>
   );

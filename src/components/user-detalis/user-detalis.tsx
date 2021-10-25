@@ -20,7 +20,7 @@ const UserDetailsBox: FC<UserDetailsBoxProps> = ({ selectedUserData }) => {
   }, [timer]);
 
   return (
-    <div className="user_details">
+    <main className="user_details">
       <h2>{selectedUserData?.login}</h2>
       <Timer
         timerOut={timer}
@@ -43,7 +43,7 @@ const UserDetailsBox: FC<UserDetailsBoxProps> = ({ selectedUserData }) => {
           </div>
         </div>
       )}
-    </div>
+    </main>
   );
 };
 
